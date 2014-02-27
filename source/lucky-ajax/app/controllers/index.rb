@@ -5,7 +5,9 @@ end
 
 # TODO: convert this route to use AJAX
 post '/rolls' do
-  html = "#{params[:roll]}.png"
+  value = params[:roll]
+  dice1 = Roll.create(value: value)
+  html = "#{dice1.value}.png"
   return html
     # value = params[:value] ? params[:value].to_i : nil
 
